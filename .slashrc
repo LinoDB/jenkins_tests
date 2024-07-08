@@ -1,0 +1,12 @@
+import slash
+from configuration.config import conf
+
+# import local configuration
+slash.config.extend(conf)
+
+# set logger level to debug
+slash.config.root.log.console_level = slash.logbook.DEBUG
+
+# set log paths
+slash.config.root.log.subpath = "{timestamp:%Y%m%d}-{context.session.id}/{context.test_id}/debug-{timestamp:%H%M%S}.log"
+slash.config.root.log.session_subpath = "{timestamp:%Y%m%d}-{context.session.id}/session.log"
