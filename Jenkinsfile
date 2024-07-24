@@ -20,7 +20,7 @@ pipeline {
     }
     post {
         always {
-            archiveArtifacts artifacts: 'logs', fingerprint: true
+            archiveArtifacts artifacts: 'logs/**/session.log', fingerprint: true
         }
     }
 }
