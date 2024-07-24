@@ -34,7 +34,7 @@ class RunTests(slash.Test):
         slash.logger.debug("Ran successful test.")
 
 
-    # @slash.skipped("Failing tests deactivated.")
+    @slash.skipped("Failing tests deactivated.")
     def test_failure(self) -> None:
         """
         Failing test.
