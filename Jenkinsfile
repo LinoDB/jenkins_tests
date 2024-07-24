@@ -18,4 +18,9 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            archiveArtifacts artifacts: 'logs', fingerprint: true
+        }
+    }
 }
