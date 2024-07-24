@@ -14,13 +14,13 @@ pipeline {
         stage('test') {
             steps {
                 echo "Running the tests for branch ${params.Branch}..."
-                bat "${WORKSPACE}\\env\\Scripts\\slash.exe run -vl logs ${WORKSPACE}\\tests.py"
+                bat "${WORKSPACE}\\env\\Scripts\\slash.exe run -vl logs ${WORKSPACE}\\tests\\base_tests.py"
             }
         }
     }
     post {
         always {
-            archiveArtifacts artifacts: 'logs/**/session.log', fingerprint: true
+            archiveArtifacts artifacts: 'logs/**/session.log'
         }
     }
 }
